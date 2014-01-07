@@ -1,0 +1,55 @@
+/*
+  Notes
+ */
+.notes h1.title {
+  text-align: center;
+}
+
+.notes .list {
+  list-style: none;
+}
+.notes .list li.label {
+  float: left;
+  
+  margin: 1em;
+}
+.notes .list li .note {
+  padding: 1em;
+  line-height: 2em;
+}
+.notes .list li.label .delete {
+  position: absolute;
+}
+/*
+  Errors
+ */
+.errors {
+    position: absolute;
+    z-index: 99;
+    text-align: center;
+    margin-top:24px;
+}
+.errors .alert {
+    width: 100%;
+    left:0;
+    margin-top:-40px;
+}
+
+.alert.error>* {
+    display: none;
+}
+.alert.error:last-child * {
+    display: initial;
+}
+.errors:hover .alert.error>* {
+    display: initial;
+}
+.errors:hover .alert.error {
+    margin-top: auto;
+}
+/*
+  Delete Button
+ */
+.delete {
+  cursor: pointer;
+}
