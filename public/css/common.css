@@ -20,32 +20,46 @@
 .notes .list li.label .delete {
   position: absolute;
 }
+.label.ng-enter {
+  -webkit-animation: flipInX 0.5s ; /* Safari/Chrome */
+  animation: flipInX 0.5s ; /* IE10+ and Future Browsers */
+}
+.label.ng-leave {
+  -webkit-animation: flipOutX 0.5s ; /* Safari/Chrome */
+  animation: flipOutX 0.5s ; /* IE10+ and Future Browsers */
+}
 /*
   Errors
  */
 .errors {
-    position: absolute;
-    z-index: 99;
-    text-align: center;
-    margin-top:24px;
+  position: absolute;
+  z-index: 99;
+  text-align: center;
 }
 .errors .alert {
-    width: 100%;
-    left:0;
-    margin-top:-40px;
+  width: 100%;
+  left:0;
+  margin-top:-10px;
 }
-
-.alert.error>* {
-    display: none;
+.errors .alert>* {
+  display: none;
 }
-.alert.error:last-child * {
-    display: initial;
+.errors .alert:last-child * {
+  display: initial;
 }
-.errors:hover .alert.error>* {
-    display: initial;
+.errors:hover .alert>* {
+  display: initial;
 }
-.errors:hover .alert.error {
-    margin-top: auto;
+.errors:hover .alert {
+  margin-top: auto;
+}
+.errors .alert.ng-enter {
+  -webkit-animation: fadeIn 1s linear; /* Safari/Chrome */
+  animation: fadeIn 1s linear; /* IE10+ and Future Browsers */
+}
+.errors .alert.ng-leave {
+  -webkit-animation: fadeOut 1s linear; /* Safari/Chrome */
+  animation: fadeOut 1s linear; /* IE10+ and Future Browsers */
 }
 /*
   Delete Button
@@ -53,3 +67,4 @@
 .delete {
   cursor: pointer;
 }
+

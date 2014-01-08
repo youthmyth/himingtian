@@ -1,8 +1,9 @@
 define([
   'angular',
-  'angular-bootstrap'
+  'angular-bootstrap',
+  'angular-animate'
 ],function(angular){
 var app = angular.module('himingtian', 
-  ['ui.bootstrap']);
+  ['ui.bootstrap','ngAnimate']);
 return app;
 });
