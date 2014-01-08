@@ -1,4 +1,4 @@
-<div class="jumbotron notes" ng-controller="NotesController">
+<div class="notes " ng-controller="NotesController">
   <!-- 主体 -->
   <div class="container">
     <div class="row">
@@ -7,10 +7,10 @@
 
         <!-- 新建便签表单 -->
         <form ng-submit="addNote()">  
-          <div class="input-group">
+          <div class="input-group" style=" vertical-align: middle; ">
             <input class="form-control" type="text" ng-model="note">
             <span class="input-group-btn">
-              <button class="btn btn-default form-control" type="submit" value="Go">Go</button>
+              <button class="btn btn-default " type="submit" value="Go">Go</button>
             </span>
           </div>
         </form>

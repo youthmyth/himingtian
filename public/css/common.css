@@ -76,3 +76,9 @@
   cursor: pointer;
 }
 
+/*
+ * For shit IE
+ */
+.jumbotron .input-group {
+    line-height: 1.428571429;
+}
