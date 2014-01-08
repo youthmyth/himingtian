@@ -1,5 +1,6 @@
 define([
-  'app'
+  'app',
+  'service/errorHandler'
 ],function (app) {
   /**
    * 数据存储器
@@ -11,11 +12,17 @@ define([
    *
    */
   app.factory('Storage',[
-    function (){
+             'ErrorHandler',
+    function (ErrorHandler){
 
       function Storage(name,data){
         this.name = name;
-        this._stroage = localStorage;
+        try{
+          this._stroage = localStorage;
+        }catch(e){
+          ErrorHandler.push(new Error('您的浏览器不支持离线储存 '));
+          return null;
+        }
       }
 
       /**
@@ -24,13 +31,11 @@ define([
        *                             function(err,data){}
        */
       Storage.prototype.get = function (callback){
-
         try{
           var data=this._stroage.getItem(this.name);
         }catch(e){
           return callback&&callback(e);
         }
-        
         callback&&callback(null,data);
       }
 
@@ -41,13 +46,11 @@ define([
        *                             function(err){}
        */
       Storage.prototype.update = function (data,callback){
-
         try{
           var data=this._stroage.setItem(this.name,data);
         }catch(e){
           return callback&&callback(e);
         }
-        
         callback&&callback();
       }
 

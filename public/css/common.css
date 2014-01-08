@@ -28,6 +28,14 @@
   -webkit-animation: flipOutX 0.5s ; /* Safari/Chrome */
   animation: flipOutX 0.5s ; /* IE10+ and Future Browsers */
 }
+.note-wapper.ng-enter {
+  -webkit-animation: flipInX 0.5s ; /* Safari/Chrome */
+  animation: flipInX 0.5s ; /* IE10+ and Future Browsers */
+}
+.note-wapper.ng-leave {
+  -webkit-animation: flipOutX 0.5s ; /* Safari/Chrome */
+  animation: flipOutX 0.5s ; /* IE10+ and Future Browsers */
+}
 /*
   Errors
  */

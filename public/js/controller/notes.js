@@ -1,6 +1,6 @@
 define([
   'app',
-  'service/NotesService',
+  'service/notesService',
 ],function (app) {
   app.controller('NotesController',[
             '$scope','NotesService','ErrorHandler',
@@ -22,7 +22,7 @@ define([
         删除便签
        */
       $scope.deleteNote = function (index){
-        NotesService.delete(index,function(err) {
+        NotesService.del(index,function(err) {
           if(err){
             ErrorHandler.push(err);
           }

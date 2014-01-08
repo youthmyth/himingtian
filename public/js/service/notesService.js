@@ -22,6 +22,7 @@ define([
        *                             function(err,notes){}
        */
       function getStorage (callback){
+        if(!notesStorage)return callback&&callbacl(null,notes);
         notesStorage.get(function (err,result){
           if(err)return callback(err);
 
@@ -47,6 +48,7 @@ define([
        *                             function(err){}
        */
       function updateStorage(notes,callback){
+        if(!notesStorage)return callback&&callbacl(null);
         try{
           var str=JSON.stringify(notes);
         }catch(e){
@@ -88,7 +90,7 @@ define([
          * @param  {Function} callback 回调函数，格式：
          *                             function(err){}
          */
-        delete: function (index,callback){
+        del: function (index,callback){
           notes.splice(index,1);
           updateStorage(notes,callback);
         },
