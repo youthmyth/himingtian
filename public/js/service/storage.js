@@ -15,7 +15,7 @@ define([
              'ErrorHandler',
     function (ErrorHandler){
 
-      function Storage(name,data){
+      function Storage(name){
         this.name = name;
         try{
           this._stroage = localStorage;
@@ -31,8 +31,11 @@ define([
        *                             function(err,data){}
        */
       Storage.prototype.get = function (callback){
+        if(this.data)return callback(null,this.data);
+
         try{
           var data=this._stroage.getItem(this.name);
+          data=JSON.parse(data);
         }catch(e){
           return callback&&callback(e);
         }
@@ -47,7 +50,8 @@ define([
        */
       Storage.prototype.update = function (data,callback){
         try{
-          var data=this._stroage.setItem(this.name,data);
+          this._stroage.setItem(this.name,JSON.stringify(data));
+          this.data=data;
         }catch(e){
           return callback&&callback(e);
         }

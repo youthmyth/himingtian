@@ -9,6 +9,7 @@ define([
         添加便签
        */
       $scope.addNote = function (){
+        if(!$scope.note)return;
         NotesService.push($scope.note,function(err,notes){
           $scope.note='';
           //TODO: handle error

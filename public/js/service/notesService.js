@@ -23,12 +23,9 @@ define([
        */
       function getStorage (callback){
         if(!notesStorage)return callback&&callbacl(null,notes);
-        notesStorage.get(function (err,result){
+        notesStorage.get(function (err,data){
           if(err)return callback(err);
-
           try{
-            var data=JSON.parse(result);
-
             data.forEach(function(v,i){
               if(notes.indexOf(v)<0){
                 notes.push(v);
@@ -49,13 +46,8 @@ define([
        */
       function updateStorage(notes,callback){
         if(!notesStorage)return callback&&callbacl(null);
-        try{
-          var str=JSON.stringify(notes);
-        }catch(e){
-          return callback&&callback(e);
-        }
 
-        notesStorage.update(str,callback);
+        notesStorage.update(notes,callback);
       }
 
       //新建一个NotesService时，需要刷新数据

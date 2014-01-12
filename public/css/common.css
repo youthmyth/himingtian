@@ -20,22 +20,7 @@
 .notes .list li.label .delete {
   position: absolute;
 }
-.label.ng-enter {
-  -webkit-animation: flipInX 0.5s ; /* Safari/Chrome */
-  animation: flipInX 0.5s ; /* IE10+ and Future Browsers */
-}
-.label.ng-leave {
-  -webkit-animation: flipOutX 0.5s ; /* Safari/Chrome */
-  animation: flipOutX 0.5s ; /* IE10+ and Future Browsers */
-}
-.note-wapper.ng-enter {
-  -webkit-animation: flipInX 0.5s ; /* Safari/Chrome */
-  animation: flipInX 0.5s ; /* IE10+ and Future Browsers */
-}
-.note-wapper.ng-leave {
-  -webkit-animation: flipOutX 0.5s ; /* Safari/Chrome */
-  animation: flipOutX 0.5s ; /* IE10+ and Future Browsers */
-}
+
 /*
   Errors
  */
@@ -61,14 +46,7 @@
 .errors:hover .alert {
   margin-top: auto;
 }
-.errors .alert.ng-enter {
-  -webkit-animation: fadeIn 1s linear; /* Safari/Chrome */
-  animation: fadeIn 1s linear; /* IE10+ and Future Browsers */
-}
-.errors .alert.ng-leave {
-  -webkit-animation: fadeOut 1s linear; /* Safari/Chrome */
-  animation: fadeOut 1s linear; /* IE10+ and Future Browsers */
-}
+
 /*
   Delete Button
  */
@@ -81,4 +59,63 @@
  */
 .jumbotron .input-group {
     line-height: 1.428571429;
+}
+
+/*
+ * 迷你日历
+ */
+minicalendar ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 -1px 10px #929292;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+minicalendar li{
+  display: inline-block;
+  width: 3.4%;
+  position: relative;
+}
+minicalendar li.today{
+  background: #4EBD76;
+}
+minicalendar .dashboard{
+  width: 400px;
+  border: 1px solid #52E297;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  word-break: break-word;
+  display: block;
+  background: white;
+  margin-bottom: 70px;
+  padding: 1em;
+}
+minicalendar li.active {
+  background: #C7FFD2;
+}
+minicalendar li > .date{
+  font-size: 1.5em;
+  text-align: center;
+}
+minicalendar li > .status{
+  height: 30px
+}
+/*
+ * Utils
+ */
+.clickable{
+  cursor: pointer;
+}
+.ng-enter
+{
+  -webkit-animation: fadeInUp 0.5s ; /* Safari/Chrome */
+  animation: fadeInUp 0.5s ; /* IE10+ and Future Browsers */
+}
+.ng-leave
+{
+  -webkit-animation: fadeOutDown 0.5s ; /* Safari/Chrome */
+  animation: fadeOutDown 0.5s ; /* IE10+ and Future Browsers */
 }

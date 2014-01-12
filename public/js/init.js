@@ -3,7 +3,8 @@ require.config({
   paths:{
     'angular':'../lib/angular',
     'angular-bootstrap':'../lib/ui-bootstrap-tpls',
-    'angular-animate':'../lib/angular-animate'
+    'angular-animate':'../lib/angular-animate',
+    'jquery':'../lib/jquery'
   },
   shim:{
     angular:{
@@ -15,13 +16,18 @@ require.config({
     'angular-animate':{
       deps:['angular'] 
     },
+    jquery:{
+      exports:'jquery'
+    }
   }
 })
 define([
   'angular',
+  'jquery',
   'app',
   'controller/notes',
-  'directive/errors'
+  'directive/errors',
+  'directive/miniCalendar'
 ],function(angular){
   angular.bootstrap(document, ['himingtian']);
   document.body.setAttribute('ng-app', 'himingtian');
