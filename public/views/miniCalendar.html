@@ -1,9 +1,12 @@
 <ul>
   <li ng-repeat="day in days" ng-class="getListElementClass(day)">
+    <div class='arrow-wapper'>
+      <div class='arrow'></div>
+    </div>
     <p class="date clickable" ng-click="showSchedules(day)">{{day.getDate()}}</p>
     <div class="status"></div>
-    <div class="dashboard" ng-if="compareDate(dashboardDate,day)">
-      <span>{{day | date:'y-M-d EEE'}}</span>
+    <div id="dashboard" ng-if="compareDate(dashboardDate,day)">
+      <p class="date">{{day.toLocaleDateString()}}</p>
       <span class="clickable close" ng-click="closeDashboard()">&times;</span>
       <table class="table">
         <tbody>

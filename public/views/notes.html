@@ -19,9 +19,9 @@
 
     <!-- 便签列表 -->
     <ul class="list row">
-      <li class="label label-default" ng-repeat="note in notes">
+      <li class="label note" ng-repeat="note in notes">
         <span class="delete" ng-click="deleteNote($index)">&times;</span>
-        <span class="note">{{note}}</span>
+        <span class="text">{{note}}</span>
       </li>
     </ul> 
 </div>

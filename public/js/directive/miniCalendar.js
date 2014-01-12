@@ -23,7 +23,7 @@ app
               $scope.schedules=schedules;
             })
           };
-          
+
           $scope.time=new Date();
           $scope.addSchedule=function(day,time,describe){
             if(!describe)return;
@@ -42,6 +42,8 @@ app
           $scope.getListElementClass=function(day){
             var klass='';
             klass+=compareDate($scope.dashboardDate,day)?'active':'';
+            klass+=' ';
+            klass+=(day.getDay()==0)?'weekend':'';
             klass+=' ';
             klass+=compareDate(new Date(),day)?'today':'';
             return klass;
