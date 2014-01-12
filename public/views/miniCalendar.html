@@ -15,7 +15,8 @@
         </tbody>
       </table>
 
-      <form class="form-inline" ng-submit="addSchedule(dashboardDate,time,describe)">
+      <button class="btn btn-primary" ng-class="(showAddScheForm)?'active':''" ng-click="showAddScheForm=!showAddScheForm">添加行程</button>
+      <form ng-if="showAddScheForm" class="form-inline" ng-submit="addSchedule(dashboardDate,time,describe)">
         <div class="form-group">
           <timepicker ng-model="time" show-meridian="false"></timepicker>
         </div>
@@ -26,6 +27,7 @@
           <button class="btn btn-default" type="submit">添加</button>
         </div>
       </form>
+
     </div>
   </li>
   <li class="clickable"><p>>></p></li>

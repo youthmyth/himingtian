@@ -4,7 +4,6 @@ require.config({
     'angular':'../lib/angular',
     'angular-bootstrap':'../lib/ui-bootstrap-tpls',
     'angular-animate':'../lib/angular-animate',
-    'jquery':'../lib/jquery'
   },
   shim:{
     angular:{
@@ -15,15 +14,11 @@ require.config({
     },
     'angular-animate':{
       deps:['angular'] 
-    },
-    jquery:{
-      exports:'jquery'
     }
   }
 })
 define([
   'angular',
-  'jquery',
   'app',
   'controller/notes',
   'directive/errors',
