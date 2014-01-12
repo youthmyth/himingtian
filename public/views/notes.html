@@ -1,16 +1,16 @@
-<div class="jumbotron notes" ng-controller="NotesController">
+<div class="notes " ng-controller="NotesController">
   <!-- 主体 -->
   <div class="container">
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
-        <h1 class="title col">嗨！梦想</h1>
+        <h1 class="title col">嗨！明天</h1>
 
         <!-- 新建便签表单 -->
         <form ng-submit="addNote()">  
-          <div class="input-group">
+          <div class="input-group" style=" vertical-align: middle; ">
             <input class="form-control" type="text" ng-model="note">
             <span class="input-group-btn">
-              <input class="btn btn-default" type="submit">
+              <button class="btn btn-default " type="submit" value="Go">Go</button>
             </span>
           </div>
         </form>
@@ -19,9 +19,9 @@
 
     <!-- 便签列表 -->
     <ul class="list row">
-      <li class="label label-default" ng-repeat="note in notes">
+      <li class="label note" ng-repeat="note in notes">
         <span class="delete" ng-click="deleteNote($index)">&times;</span>
-        <span class="note">{{note}}</span>
+        <span class="text">{{note}}</span>
       </li>
     </ul> 
 </div>

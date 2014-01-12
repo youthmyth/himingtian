@@ -1,55 +1,168 @@
 /*
+  init
+ */
+body{
+  background: url('/img/bg.jpg');
+}
+
+/*
   Notes
  */
+.notes{
+  margin-top: 60px;
+}
 .notes h1.title {
   text-align: center;
 }
 
 .notes .list {
   list-style: none;
+  margin-top: 40px;
 }
-.notes .list li.label {
+.notes .list .note{
   float: left;
-  
   margin: 1em;
+  position: relative;
+  background: #FFF;
+  color: #000;
+  border-radius: 5px;
+  border-left: 11px solid #E5EFE9;
 }
-.notes .list li .note {
+.notes .list .note .text {
   padding: 1em;
   line-height: 2em;
 }
-.notes .list li.label .delete {
+.notes .list .note .delete {
+  color: #9E1414;
+  left: -9px;
   position: absolute;
+  display: none;
+}
+.notes .list .note:hover .delete {
+  color: #FFF;
+  left: -9px;
+  top: 50%;
+  margin-top: -6px;
+  position: absolute;
+  display: block;
 }
 /*
   Errors
  */
 .errors {
-    position: absolute;
-    z-index: 99;
-    text-align: center;
-    margin-top:24px;
+  position: absolute;
+  z-index: 99;
+  text-align: center;
 }
 .errors .alert {
-    width: 100%;
-    left:0;
-    margin-top:-40px;
+  width: 100%;
+  left:0;
+  margin-top:-10px;
+}
+.errors .alert>* {
+  display: none;
+}
+.errors .alert:last-child * {
+  display: initial;
+}
+.errors:hover .alert>* {
+  display: initial;
+}
+.errors:hover .alert {
+  margin-top: auto;
 }
 
-.alert.error>* {
-    display: none;
-}
-.alert.error:last-child * {
-    display: initial;
-}
-.errors:hover .alert.error>* {
-    display: initial;
-}
-.errors:hover .alert.error {
-    margin-top: auto;
-}
 /*
   Delete Button
  */
 .delete {
   cursor: pointer;
+}
+
+/*
+ * mini calendar
+ */
+minicalendar ul{
+  background:#fff;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 -1px 10px #929292;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+minicalendar li{
+  display: inline-block;
+  width: 3.4%;
+  position: relative;
+}
+minicalendar li.weekend{
+  background: #E5EFE9;
+}
+
+minicalendar #dashboard{
+  width: 400px;
+  border: 1px solid #25A92B;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  word-break: break-word;
+  display: block;
+  background: white;
+  margin-bottom: 70px;
+  padding: 1em;
+}
+minicalendar #dashboard .date{
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1.5em;
+  display: inline-block;
+}
+minicalendar li.active {
+  background: #4EBD76;
+}
+minicalendar li > .date{
+  font-size: 1.5em;
+  text-align: center;
+}
+minicalendar li > .status{
+  height: 30px
+}
+minicalendar li.today {
+  border-top: 3px solid #5F9E7A;
+}
+minicalendar li.active .arrow{
+  visibility: visible;
+  border-bottom-color: #4EBD76;
+}
+/*
+ * Utils
+ */
+.clickable{
+  cursor: pointer;
+}
+.ng-enter
+{
+  -webkit-animation: fadeInUp 0.3s ; /* Safari/Chrome */
+  animation: fadeInUp 0.3s ; /* IE10+ and Future Browsers */
+}
+.ng-leave
+{
+  -webkit-animation: fadeOutDown 0.3s ; /* Safari/Chrome */
+  animation: fadeOutDown 0.3s ; /* IE10+ and Future Browsers */
+}
+.arrow-wapper{
+  position: relative;
+}
+.arrow{
+  visibility: hidden;
+  position: absolute;
+  border-right: 10px solid rgba(0, 0, 0, 0);
+  border-bottom: 10px solid;
+  border-left: 10px solid rgba(0, 0, 0, 0);
+  top: -10px;
+  z-index: 99;
+  left: 50%;
+  margin-left: -10px;
 }

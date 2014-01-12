@@ -1,60 +1,7 @@
-
-
 define([
-  'app'
+  'app',
+  'service/storage'
 ],function (app) {
-  /**
-   * 数据存储器
-   *
-   * 储存与读取时，返回的值皆为字符串。
-   * 
-   * TODO: 1. 支持indexedDB
-   *       2. 支持与服务器交互
-   *
-   */
-  app.factory('Storage',[
-    function (){
-
-      function Storage(name,data){
-        this.name = name;
-        this._stroage = localStorage;
-      }
-
-      /**
-       * 从数据库获取数据
-       * @param  {Function} callback 回调函数，格式：
-       *                             function(err,data){}
-       */
-      Storage.prototype.get = function (callback){
-
-        try{
-          var data=this._stroage.getItem(this.name);
-        }catch(e){
-          return callback&&callback(e);
-        }
-        
-        callback&&callback(null,data);
-      }
-
-      /**
-       * 更新数据库
-       * @param  {String}   data     数据
-       * @param  {Function} callback 回调函数，格式：
-       *                             function(err){}
-       */
-      Storage.prototype.update = function (data,callback){
-
-        try{
-          var data=this._stroage.setItem(this.name,data);
-        }catch(e){
-          return callback&&callback(e);
-        }
-        
-        callback&&callback();
-      }
-
-      return Storage;
-    }]);
 
   /**
    * 便签数据服务，用Storage做后端，提供储存和读取便签的功能
@@ -75,12 +22,10 @@ define([
        *                             function(err,notes){}
        */
       function getStorage (callback){
-        notesStorage.get(function (err,result){
+        if(!notesStorage)return callback&&callbacl(null,notes);
+        notesStorage.get(function (err,data){
           if(err)return callback(err);
-
           try{
-            var data=JSON.parse(result);
-
             data.forEach(function(v,i){
               if(notes.indexOf(v)<0){
                 notes.push(v);
@@ -100,13 +45,9 @@ define([
        *                             function(err){}
        */
       function updateStorage(notes,callback){
-        try{
-          var str=JSON.stringify(notes);
-        }catch(e){
-          return callback&&callback(e);
-        }
+        if(!notesStorage)return callback&&callbacl(null);
 
-        notesStorage.update(str,callback);
+        notesStorage.update(notes,callback);
       }
 
       //新建一个NotesService时，需要刷新数据
@@ -141,7 +82,7 @@ define([
          * @param  {Function} callback 回调函数，格式：
          *                             function(err){}
          */
-        delete: function (index,callback){
+        del: function (index,callback){
           notes.splice(index,1);
           updateStorage(notes,callback);
         },
