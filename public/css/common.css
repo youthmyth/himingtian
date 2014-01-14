@@ -5,6 +5,12 @@ body{
   font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
   background: url('/img/bg.jpg');
 }
+@font-face {
+   font-family:'Noodle';
+   src: url('../fonts/big_noodle_titling.ttf') format('truetype');
+   font-weight:normal;
+ }
+ 
 .btn {
 	border-radius: 0px;
 }
@@ -151,44 +157,57 @@ minicalendar ul{
   bottom: 0;
 }
 minicalendar li{
+  border-left: 1px solid #ddd;
   display: inline-block;
   width: 3.4%;
   position: relative;
 }
 minicalendar li.weekend{
   background: #E5EFE9;
+  color:#4EBD76;
 }
-
+minicalendar li.weekend > .date{
+  color: #666;
+}
 minicalendar #dashboard{
   width: 400px;
-  border: 1px solid #25A92B;
+  border: 1px solid #4EBD76;
   position: absolute;
   bottom: 0;
   z-index: 1;
   word-break: break-word;
   display: block;
   background: white;
-  margin-bottom: 70px;
+  margin-bottom: 63px;
   padding: 1em;
 }
 minicalendar #dashboard .date{
-  font-size: 1.4em;
+  font-size: 1.5em;
   font-weight: normal;
-  line-height: 1.4em;
+  line-height: 1.5em;
   display: inline-block;
+}
+minicalendar li.havedate {
+  background: #4EBD76;
 }
 minicalendar li.active {
   background: #4EBD76;
 }
+minicalendar li.active > .date{
+  color: #fff;
+}
 minicalendar li > .date{
-  font-size: 1.4em;
+  font-family:'Noodle',sans-serif;
+  font-size: 2.2em;
+  color:#888;
   text-align: center;
 }
 minicalendar li > .status{
-  height: 30px
+  height: 23px
 }
 minicalendar li.today {
-  border-top: 3px solid #5F9E7A;
+  color:#4EBD76;
+  border-left: 3px solid #4EBD76;
 }
 minicalendar li.active .arrow{
   visibility: visible;
