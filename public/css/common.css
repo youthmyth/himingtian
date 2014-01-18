@@ -126,15 +126,11 @@ body{
   left:0;
   margin-top:-10px;
 }
-.errors .alert>* {
-  display: none;
-}
+
 .errors .alert:last-child * {
   display: initial;
 }
-.errors:hover .alert>* {
-  display: initial;
-}
+
 .errors:hover .alert {
   margin-top: auto;
 }
@@ -168,19 +164,19 @@ minicalendar li.weekend{
   background: #E5EFE9;
 }
 
-minicalendar #dashboard{
+ #dashboard{
   width: 400px;
   border: 1px solid #25A92B;
   position: absolute;
-  bottom: 0;
-  z-index: 1;
+  bottom: 62px;
   word-break: break-word;
   display: block;
   background: white;
-  margin-bottom: 70px;
   padding: 1em;
+  transition: left 0.2s ease-out;
+  -webkit-transition: left 0.2s ease-out;
 }
-minicalendar #dashboard .date{
+ #dashboard .date{
   font-size: 1.4em;
   font-weight: normal;
   line-height: 1.4em;
@@ -188,13 +184,22 @@ minicalendar #dashboard .date{
 }
 minicalendar li.active {
   background: #4EBD76;
+  border-top: 3px solid #4EBD76;
 }
 minicalendar li > .date{
   font-size: 1.4em;
   text-align: center;
 }
-minicalendar li > .status{
-  height: 30px
+minicalendar li .status{
+  height: 30px;
+  float:left;
+}
+minicalendar li .status .spot{
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  margin:3px;
+  background: black;
 }
 minicalendar li.today {
   border-top: 3px solid #5F9E7A;
