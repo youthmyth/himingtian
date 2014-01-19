@@ -1,6 +1,6 @@
 var express = require('express'),
     app = express(),
-    port = 80,
+    port = 4000,
     staticFileHandler = express.static('./public');
 
 app.use(staticFileHandler);
