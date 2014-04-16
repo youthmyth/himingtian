@@ -119,6 +119,10 @@ body{
   border-left: 11px solid #E5EFE9;
 }
 
+.notes .list li.label:hover {
+  cursor: pointer;
+  color: #cc3434;
+}
 /*
   Errors
  */
