@@ -92,13 +92,9 @@ body{
   display: block;
 }
 
-
 /*
   Notes
  */
-.notes{
-  margin-top: 60px;
-}
 .notes h1.title {
   text-align: center;
   padding: 60px 0px 5px 0px;
@@ -112,11 +108,6 @@ body{
 .notes .list li.label {
   float: left; 
   margin: 1em;
-  position: relative;
-  background: #FFF;
-  color: #000;
-  border-radius: 5px;
-  border-left: 11px solid #E5EFE9;
 }
 
 /*
@@ -132,11 +123,15 @@ body{
   left:0;
   margin-top:-10px;
 }
-
+.errors .alert>* {
+  display: none;
+}
 .errors .alert:last-child * {
   display: initial;
 }
-
+.errors:hover .alert>* {
+  display: initial;
+}
 .errors:hover .alert {
   margin-top: auto;
 }
@@ -174,34 +169,20 @@ minicalendar li.weekend{
 minicalendar li.weekend > .date{
   color: #666;
 }
-<<<<<<< HEAD
 minicalendar #dashboard{
-=======
-
- #dashboard{
->>>>>>> 276e33068ceeb8c813c4b9ee7f2fb1328d29f4d2
   width: 400px;
   border: 1px solid #4EBD76;
   position: absolute;
-  bottom: 62px;
+  bottom: 0;
+  z-index: 1;
   word-break: break-word;
   display: block;
   background: white;
-<<<<<<< HEAD
   margin-bottom: 63px;
-=======
->>>>>>> 276e33068ceeb8c813c4b9ee7f2fb1328d29f4d2
   padding: 1em;
-  transition: left 0.2s ease-out;
-  -webkit-transition: left 0.2s ease-out;
 }
-<<<<<<< HEAD
 minicalendar #dashboard .date{
   font-size: 1.5em;
-=======
- #dashboard .date{
-  font-size: 1.4em;
->>>>>>> 276e33068ceeb8c813c4b9ee7f2fb1328d29f4d2
   font-weight: normal;
   line-height: 1.5em;
   display: inline-block;
@@ -211,7 +192,6 @@ minicalendar li.havedate {
 }
 minicalendar li.active {
   background: #4EBD76;
-  border-top: 3px solid #4EBD76;
 }
 minicalendar li.active > .date{
   color: #fff;
@@ -222,21 +202,8 @@ minicalendar li > .date{
   color:#888;
   text-align: center;
 }
-<<<<<<< HEAD
 minicalendar li > .status{
   height: 23px
-=======
-minicalendar li .status{
-  height: 30px;
-  float:left;
-}
-minicalendar li .status .spot{
-  display: inline-block;
-  width: 3px;
-  height: 3px;
-  margin:3px;
-  background: black;
->>>>>>> 276e33068ceeb8c813c4b9ee7f2fb1328d29f4d2
 }
 minicalendar li.today {
   color:#4EBD76;

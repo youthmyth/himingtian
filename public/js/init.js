@@ -25,6 +25,7 @@ define([
   'directive/miniCalendar'
 ],function(angular){
   angular.bootstrap(document, ['himingtian']);
+  document.body.setAttribute('ng-app', 'himingtian');
 })
 
 /*
