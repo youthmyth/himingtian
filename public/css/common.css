@@ -1,5 +1,5 @@
 /*
-  init
+  init #4EBD76;
  */
 body{
   font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
@@ -41,11 +41,10 @@ body{
 	line-height: 32px;
 	padding:0 12px;
 	border: none;
-	border-radius: 8px;
 	text-align:center;	 
-	box-shadow: inset 1px 3px 3px rgba(0, 0, 0, 0.4);
-	-moz-box-shadow: inset 1px 3px 3px rgba(0, 0, 0, 0.4);
-	-webkit-box-shadow: inset 1px 3px 3px rgba(0, 0, 0, 0.4);
+	box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.4);
 	transition: border-color ease-in-out .1s, box-shadow ease-in-out .1s
 }
 
@@ -92,9 +91,13 @@ body{
   display: block;
 }
 
+
 /*
   Notes
  */
+.notes{
+  margin-top: 60px;
+}
 .notes h1.title {
   text-align: center;
   padding: 60px 0px 5px 0px;
@@ -108,12 +111,16 @@ body{
 .notes .list li.label {
   float: left; 
   margin: 1em;
+  position: relative;
+  background: #FFF;
+  color: #000;
+  border-left: 11px solid #E5EFE9;
 }
-
 .notes .list li.label:hover {
   cursor: pointer;
   color: #cc3434;
 }
+
 /*
   Errors
  */
@@ -127,15 +134,11 @@ body{
   left:0;
   margin-top:-10px;
 }
-.errors .alert>* {
-  display: none;
-}
+
 .errors .alert:last-child * {
   display: initial;
 }
-.errors:hover .alert>* {
-  display: initial;
-}
+
 .errors:hover .alert {
   margin-top: auto;
 }
@@ -168,84 +171,65 @@ minicalendar li{
 }
 minicalendar li.weekend{
   background: #E5EFE9;
-  color:#4EBD76;
+  color:#24a92a;
 }
 minicalendar li.weekend > .date{
-  color: #666;
+  color: #000;
 }
-<<<<<<< HEAD
-#dashboard{
+
+ #dashboard{
   width: 400px;
-  border: 1px solid #4EBD76;
+  border: 1px solid #24a92a;
   position: absolute;
-  bottom: 73px;
+  bottom: 62px;
   word-break: break-word;
   display: block;
   background: white;
-=======
-minicalendar #dashboard{
-  width: 400px;
-  border: 1px solid #4EBD76;
-  position: absolute;
-  bottom: 0;
-  z-index: 1;
-  word-break: break-word;
-  display: block;
-  background: white;
-  margin-bottom: 63px;
->>>>>>> ac1eb2bc9cda8f807078b93a9dc39f178755002a
   padding: 1em;
+  transition: left 0.2s ease-out;
+  -webkit-transition: left 0.2s ease-out;
 }
-<<<<<<< HEAD
-#dashboard .date{
+ #dashboard .date{
   font-size: 1.4em;
-=======
-minicalendar #dashboard .date{
-  font-size: 1.5em;
->>>>>>> ac1eb2bc9cda8f807078b93a9dc39f178755002a
   font-weight: normal;
-  line-height: 1.5em;
+  line-height: 1.4em;
   display: inline-block;
+  color:#333;
 }
 minicalendar li.havedate {
-  background: #4EBD76;
+  background: #24a92a;
 }
 minicalendar li.active {
   background: #4EBD76;
-}
-minicalendar li.active > .date{
-  color: #fff;
+  color:#FFF;
+  border-top: 3px solid #4EBD76;
+  border-left: 3px solid #4EBD76;
 }
 minicalendar li > .date{
-  font-family:'Noodle',sans-serif;
-  font-size: 2.2em;
-  color:#888;
+  font-size: 1.4em;
   text-align: center;
 }
-<<<<<<< HEAD
 minicalendar li .status{
   height: 30px;
   float:left;
 }
 minicalendar li .status .spot{
   display: inline-block;
-  width: 3px;
-  height: 3px;
-  margin:3px;
-  background: black;
-=======
-minicalendar li > .status{
-  height: 23px
->>>>>>> ac1eb2bc9cda8f807078b93a9dc39f178755002a
+  width: 4px;
+  height: 4px;
+  margin:4px;
+  background: green;
 }
 minicalendar li.today {
-  color:#4EBD76;
-  border-left: 3px solid #4EBD76;
+  color:#24a92a;
+  border-top: 3px solid #5F9E7A;
 }
 minicalendar li.active .arrow{
   visibility: visible;
   border-bottom-color: #4EBD76;
 }
+.btn-primary{ margin-left:10px;}
+
 /*
  * Utils
  */

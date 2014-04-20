@@ -13,9 +13,12 @@
 </head>
 <body>
   <!-- 顶部错误提示 -->
-  <div class="row">
-    <errors class="errors col-xs-12 col-sm-4 col-sm-offset-4"></errors>
+  <div class="container">
+    <div class="row" ng-style="{position: 'relative'}">
+      <errors class="errors col-xs-12 col-sm-4 col-sm-offset-4"></errors>
+    </div>
   </div>
+  
 
   <!-- 便签模块 -->
   <div class="note-wapper" ng-include="'/views/notes.html'">

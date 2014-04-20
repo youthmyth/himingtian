@@ -1,5 +1,4 @@
 require.config({
-  waitSeconds:600,
   baseUrl:'/js',
   paths:{
     'angular':'../lib/angular',
@@ -26,7 +25,6 @@ define([
   'directive/miniCalendar'
 ],function(angular){
   angular.bootstrap(document, ['himingtian']);
-  document.body.setAttribute('ng-app', 'himingtian');
 })
 
 /*

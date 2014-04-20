@@ -1,37 +1,39 @@
+<popblock id="dashboard" options="popblockOptions">
+  <p class="date">{{day.toLocaleDateString()}}</p>
+  
+  <span class="clickable close" ng-click="closeDashboard()">&times;</span>
+  <table class="table today">
+    <tbody>
+      <tr ng-repeat="sche in schedules track by $index">
+        <td>{{sche.time | date:'HH:mm'}}</td>
+        <td>{{sche.describe}}</td>
+        <td class="clickable" ng-click="deleteSche(dashboardDate,$index)">&times;</td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary" ng-class="(showAddScheForm)?'active':''" ng-click="showAddScheForm=!showAddScheForm">添加行程</button>
+  <form ng-if="showAddScheForm" class="form-inline" ng-submit="addSchedule(dashboardDate,time,describe)">
+    <div class="form-group">
+      <timepicker ng-model="time" show-meridian="false"></timepicker>
+    </div>
+    <div class="form-group">
+      <input class="form-control" ng-model="describe" placeholder="你想做什么？">
+    </div>
+    <div class="form-group" style= "float:right;margin-right:35px;">
+      <button class="btn btn-primary" type="submit">添加行程</button>
+    </div>
+  </form>
+</popblock>
 <ul>
   <li ng-repeat="day in days" ng-class="getListElementClass(day)">
     <div class='arrow-wapper'>
       <div class='arrow'></div>
     </div>
-    <p class="date clickable" ng-click="showSchedules(day)">{{day.getDate()}}</p>
-    <div class="status"></div>
-    <div id="dashboard" ng-if="compareDate(dashboardDate,day)">
-      <p class="date">{{day.toLocaleDateString()}}</p>
-      <span class="clickable close" ng-click="closeDashboard()">&times;</span>
-      <table class="table today">
-        <tbody>
-          <tr ng-repeat="sche in schedules track by $index">
-            <td>{{sche.time | date:'HH:mm'}}</td>
-            <td>{{sche.describe}}</td>
-            <td class="clickable" ng-click="deleteSche(dashboardDate,$index)">&times;</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <button class="btn btn-primary" ng-class="(showAddScheForm)?'active':''" ng-click="showAddScheForm=!showAddScheForm">添加行程</button>
-      <form ng-if="showAddScheForm" class="form-inline" ng-submit="addSchedule(dashboardDate,time,describe)">
-        <div class="form-group">
-          <timepicker ng-model="time" show-meridian="false"></timepicker>
-        </div>
-        <div class="form-group">
-          <input class="form-control" ng-model="describe" placeholder="你想做什么？">
-        </div>
-        <div class="form-group">
-          <button class="btn btn-default" type="submit">添加</button>
-        </div>
-      </form>
-
+    <p class="date clickable" viewport ng-click="showDashboard(day,$event)">{{day.getDate()}}</p>
+    <div class="status">
+      <div class="spot" ng-repeat="spot in day.schedules track by $index">
+      </div>
     </div>
   </li>
-  <li class="clickable"><p>>></p></li>
+  <li class="clickable"><p>》</p></li>
 </ul>
