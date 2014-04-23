@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>嗨！明天</title>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <link href="/css/bootstrap.css" rel="stylesheet"/>
+  <link href="/css/common.css" rel="stylesheet"/>
+  <link href="/css/animate.css" rel="stylesheet"/>
+  <script type='text/javascript' data-main='/js/init.js' src="/lib/require.js"></script>
+</head>
+<body>
+  <!-- 顶部错误提示 -->
+  <div class="row">
+    <errors class="errors col-xs-12 col-sm-4 col-sm-offset-4"></errors>
+  </div>
+
+  <div class="row">
+    <div class="pull-right col-xs-12 col-sm-4 col-sm-offset-4">
+    <% if (isLogin){ %>
+      <h3>hi~<%=username%></h3>
+      <h3><a href="/logout">退出</a></h3>
+    <% }else{ %>
+      <h3><a href="/login">登录</a></h3>
+      <h3><a href="/reg">注册</a></h3>
+    <% } %>
+    </div>
+  </div>
+
+  <!-- 便签模块 -->
+  <div class="note-wapper" ng-include="'/views/notes.html'">
+  </div>
+
+  <!-- 迷你日历 -->
+  <minicalendar></minicalendar>
+</body>
+</html>
+

@@ -6,7 +6,7 @@
         <h1 class="title col">嗨！明天</h1>
 
         <!-- 新建便签表单 -->
-        <form ng-submit="addNote()">  
+        <form ng-submit="addNote()">
           <div class="input-group">
             <input class="form-control" type="text" ng-model="note" placeholder="梦想是你掩埋不住的才华"  autocomplete="off" x-webkit-speech>
             <span class="input-group-btn">
@@ -19,9 +19,8 @@
 
     <!-- 便签列表 -->
     <ul class="list row">
-      <li class="label label-dream" ng-repeat="note in notes">
-        <span class="delete" ng-click="deleteNote($index)">&times;</span>
-        <span class="text">{{note}}</span>
+      <li class="label label-dream" ng-repeat="note in notes track by $index">
+        <span class="text" ng-click="deleteNote($index)">{{note.data}}</span>
       </li>
     </ul> 
 </div>
